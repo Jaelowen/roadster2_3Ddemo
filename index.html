@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eeeee8" />
+  <meta name="description" content="探索 Roadster 2.0，通过自由视角与三轴喷气控制，体验概念推进实验。" />
+  <link rel="icon" href="/favicon.svg" />
+  <title>Roadster 2.0 — 推进实验室</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Roadster 展厅首页"><span class="brand-mark">R<span>↗</span></span><span>ROADSTER<span class="brand-sub">DESIGN / MOTION / EXPLORATION</span></span></a>
+    <span class="header-center">THE NEXT DIMENSION OF DRIVE</span>
+    <span class="header-status"><span class="status-dot"></span> 交互概念展厅 <span class="edition">ED. 02</span></span>
+  </header>
+  <main class="experience">
+    <section class="showroom" aria-label="Roadster 三维展台">
+      <div class="stage-heading"><p class="eyebrow"><span></span> TESLA ROADSTER · 2020 CONCEPT</p><h1>ROADSTER<span>2.0</span></h1><p class="stage-subtitle">让想象力，先行一步。</p></div>
+      <span class="stage-index" aria-hidden="true">EXPLORE<br /><strong>001 / 003</strong></span>
+      <div id="scene" aria-label="拖动旋转车辆，滚轮或双指缩放" aria-busy="true"></div>
+      <div class="loading" id="loading" role="status"><span class="loading-symbol">R</span><span id="loading-label">正在准备展台</span><div class="loading-track"><span id="loading-bar"></span></div><span id="loading-percent">0%</span><button id="retry" class="retry-button" hidden>重新加载</button></div>
+      <div class="stage-caption"><span class="crosshair">＋</span><span id="scene-caption">自由视角<span>拖动旋转 · 滚轮缩放</span></span></div>
+      <div class="stage-bottom">
+        <div class="paint-picker"><span class="small-label">车身配色 <span id="paint-name">烈焰红</span></span><div class="swatches" role="group" aria-label="选择车身颜色"><button class="swatch active" data-color="#b51b28" data-name="烈焰红" style="--swatch:#b51b28" aria-label="烈焰红" aria-pressed="true"></button><button class="swatch" data-color="#b8bec3" data-name="冰川银" style="--swatch:#b8bec3" aria-label="冰川银" aria-pressed="false"></button><button class="swatch" data-color="#202930" data-name="曜石黑" style="--swatch:#35424b" aria-label="曜石黑" aria-pressed="false"></button></div></div>
+        <div class="view-picker" role="group" aria-label="切换视角"><button data-view="front" class="active" aria-pressed="true">前侧视角</button><button data-view="rear" aria-pressed="false">车尾视角</button><button data-view="top" aria-pressed="false">俯视视角</button></div>
+        <button id="reset-view" class="icon-button" aria-label="重置视角" title="重置视角">↺</button>
+      </div>
+    </section>
+    <aside class="control-panel" aria-labelledby="panel-title">
+      <div class="panel-top"><span class="panel-kicker">PLAY WITH POSSIBILITIES</span><span class="lab-icon" aria-hidden="true">✳</span><h2 id="panel-title">推进实验室<span>THRUSTER LAB</span></h2><p>轻推滑条，唤醒每一道气流。</p></div>
+      <div class="panel-status"><span><span class="status-dot" id="thrust-dot"></span><span id="thrust-status" role="status">待机中</span></span><span class="live-label">LIVE CONTROL</span></div>
+      <div class="thrust-control"><div class="control-title"><label for="rear-thrust"><span class="control-number">01</span>后向推进</label><output for="rear-thrust" id="rear-output">35<span>%</span></output></div><p>双喷口释放向后的推进气流</p><input id="rear-thrust" type="range" min="0" max="100" step="1" value="35" aria-label="后向推进强度" /><div class="range-labels"><span>静止</span><span>REAR THRUST</span><span>全开</span></div></div>
+      <div class="thrust-control"><div class="control-title"><label for="side-thrust"><span class="control-number">02</span>侧向喷气</label><output for="side-thrust" id="side-output">0<span>%</span></output></div><p>开启车身两侧的横向气流</p><input id="side-thrust" type="range" min="0" max="100" step="1" value="0" aria-label="侧向喷气强度" /><div class="range-labels"><span>静止</span><span>LATERAL JETS</span><span>全开</span></div></div>
+      <div class="thrust-control"><div class="control-title"><label for="lift-thrust"><span class="control-number">03</span>垂直升力</label><output for="lift-thrust" id="lift-output">0<span>%</span></output></div><p>底部喷流托起车身，观察悬浮姿态</p><input id="lift-thrust" type="range" min="0" max="100" step="1" value="0" aria-label="垂直升力强度" /><div class="range-labels"><span>静止</span><span>VERTICAL LIFT</span><span>全开</span></div></div>
+      <div class="panel-actions"><button id="demo" class="demo-button"><span>一键演示</span><span aria-hidden="true">↗</span></button><button id="stop" class="stop-button">全部归零</button></div>
+      <div class="zoom-section"><label for="zoom">画面缩放 <span>远 ↔ 近</span></label><input type="range" id="zoom" min="0" max="100" value="42" aria-label="拖动缩放车辆" /></div>
+      <p class="concept-note"><span>◇</span> 喷口、气流与悬浮为概念可视化，<br />不代表实际车辆配置或工程数据。</p>
+    </aside>
+  </main>
+  <footer class="site-footer"><span>INDEPENDENT INTERACTIVE STUDY <span class="footer-divider">/</span> BUILT TO EXPLORE</span><span>模型 <a href="https://sketchfab.com/3d-models/tesla-roadster-2020-wwwvecarzcom-fac3d813620f4c4a95da1933c2592069" target="_blank" rel="noreferrer">vecarz</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></span></footer>
+  <noscript>请启用 JavaScript 以查看三维展厅。</noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
