@@ -1,6 +1,7 @@
 # Roadster 2.0 — 推进实验室
 
 基于 Vite 8 和 three.js 的本地 3D 展示网站，展示 Tesla Roadster 2020 概念版模型。
+可以在premier-tan-mva4qbs8.edgeone.dev中查看
 
 ## 开始使用
 
