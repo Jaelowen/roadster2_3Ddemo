@@ -63,13 +63,3 @@ package-lock.json            依赖版本锁文件
 ```bash
 npx --yes @gltf-transform/cli@4.5.1 optimize 原始模型.glb public/models/roadster.glb --compress meshopt --texture-size 1024 --texture-compress webp --palette false --simplify false
 ```
-
-使用 `MeshoptDecoder` 本地解码；请保留页面署名和素材授权文件。
-
-## 开发与验证
-
-场景模块包含资源清理和 Vite 热更新清理逻辑。页面不可见时暂停动画。
-
-开发时可通过页面实际加载的 `src/main.js` 模块导出的 `inspectExperience()` 查看镜头、车漆材质和喷口的实时状态。无需给 `window` 添加全局对象。
-
-不要将 `node_modules/`、`dist/`、`.DS_Store` 或日志提交到版本管理。仓库初始化、提交和上传由你自行管理。
